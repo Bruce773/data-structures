@@ -1,14 +1,12 @@
 var Queue = function() {
   // Hey! Rewrite in the new style. Your code will wind up looking very similar,
   // but try not not reference your old code in writing the new style.
-  var newInstance = {};
-  _.extend(newInstance, queueMethods);
-  return newInstance;
+  var instance = { storage: {} };
+  _.extend(instance, queueMethods);
+  return instance;
 };
 
-var queueMethods = {
-  storage: {}
-};
+var queueMethods = {};
 
 queueMethods.enqueue = function(value) {
   var key = Object.keys(this.storage).length;
@@ -37,6 +35,6 @@ queueMethods.dequeue = function() {
 };
 
 queueMethods.size = function() {
-  //return the length of stothis.rage
+  //return the length of storage
   return Object.keys(this.storage).length;
 };
